@@ -1,0 +1,31 @@
+#!/bin/bash
+
+<%
+# relative paths are not handled well by Slurm
+log.file = fs::path_expand(log.file)
+-%>
+
+#SBATCH --mail-user='netid@stanford.edu'
+#SBATCH --mail-type=FAIL
+#SBATCH --job-name=<%= job.name %>
+#SBATCH --output=<%= log.file %>
+#SBATCH --error=<%= log.file %>
+#SBATCH --partition='<%= resources$queue %>'
+#SBATCH --time=<%= resources$walltime %>
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=<%= resources$n_cpu %>
+#SBATCH --mem=<%= resources$mem %>
+#SBATCH --requeue
+<%= if (!is.null(resources$partition)) sprintf(paste0("#SBATCH --partition='", resources$partition, "'")) %>
+
+## Initialize work environment like
+## source /etc/profile
+## module add ...
+module load r/4.4.0
+
+## Export value of DEBUGME environemnt var to slave
+export DEBUGME=<%= Sys.getenv("DEBUGME") %>
+
+## Run R:
+## we merge R output with stdout from SLURM, which gets then logged via --output option
+Rscript -e 'batchtools::doJobCollection("<%= uri %>")'
