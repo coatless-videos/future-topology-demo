@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <!-- Background -->
+  <rect width="900" height="700" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-size="16" fill="#8C1515" font-weight="bold">
+    Future Topology and Execution Hierarchy
+  </text>
+  
+  <!-- Future Topology Labels -->
+  <g id="topology-labels">
+    <text x="40" y="90" fill="#8C1515" font-size="14">Future Plan:</text>
+    <text x="50" y="120" fill="#4D4F53" font-size="14">1. Login</text>
+    <text x="50" y="150" fill="#4D4F53" font-size="14">2. SLURM</text>
+    <text x="50" y="180" fill="#4D4F53" font-size="14">3. Multisession</text>
+  </g>
+
+  <!-- Arrow Marker Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+    refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2E2D29"/>
+    </marker>
+  </defs>
+
+  <!-- User Computer -->
+  <g transform="translate(200,85)">
+    <!-- Monitor -->
+    <rect x="0" y="0" width="80" height="60" fill="#DAD7CB" rx="2"/>
+    <rect x="5" y="5" width="70" height="45" fill="#ffffff"/>
+    <!-- R Code on Screen -->
+    <text x="15" y="20" fill="#2E2D29" font-size="8">library(future)</text>
+    <text x="15" y="30" fill="#2E2D29" font-size="8">plan(login)</text>
+    <text x="15" y="40" fill="#2E2D29" font-size="8">x %&#x3C;-% { }</text>
+    <!-- Stand -->
+    <rect x="35" y="60" width="10" height="10" fill="#DAD7CB"/>
+    <rect x="25" y="70" width="30" height="3" fill="#DAD7CB"/>
+    <!-- Connection Line to Login Node with Arrow -->
+    <path d="M80,30 L200,30" stroke="#2E2D29" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Login Node Region (Level 1) -->
+  <rect x="400" y="80" width="120" height="70" rx="5" fill="#8C1515"/>
+  <text x="460" y="115" text-anchor="middle" fill="white" font-size="14" dominant-baseline="middle">Login Node</text>
+  <text x="505" y="140" text-anchor="end" fill="white" font-size="12">(Future Level 1)</text>
+  
+  <!-- SLURM Region (Level 2) -->
+  <rect x="70" y="200" width="760" height="160" fill="#8C1515" fill-opacity="0.1" rx="10"/>
+  <text x="80" y="225" fill="#8C1515" font-size="14">SLURM Managed Region</text>
+  <text x="815" y="350" text-anchor="end" fill="#8C1515" font-size="12">(Future Level 2)</text>
+  
+  <!-- Compute Nodes -->
+  <g id="compute-nodes">
+    <!-- Node 1 -->
+    <rect x="100" y="250" width="140" height="80" rx="5" fill="#4D4F53"/>
+    <text x="170" y="295" text-anchor="middle" fill="white" font-size="14">Compute Node 1</text>
+    
+    <!-- Node 2 -->
+    <rect x="280" y="250" width="140" height="80" rx="5" fill="#4D4F53"/>
+    <text x="350" y="295" text-anchor="middle" fill="white" font-size="14">Compute Node 2</text>
+    
+    <!-- Node 3 -->
+    <rect x="460" y="250" width="140" height="80" rx="5" fill="#4D4F53"/>
+    <text x="530" y="295" text-anchor="middle" fill="white" font-size="14">Compute Node 3</text>
+    
+    <!-- Node 4 -->
+    <rect x="640" y="250" width="140" height="80" rx="5" fill="#4D4F53"/>
+    <text x="710" y="295" text-anchor="middle" fill="white" font-size="14">Compute Node 4</text>
+  </g>
+  
+  <!-- Multisession Region (Level 3) -->
+  <rect x="70" y="400" width="760" height="160" fill="#4D4F53" fill-opacity="0.1" rx="10"/>
+  <text x="80" y="550" fill="#4D4F53" font-size="14">Multisession Region</text>
+  <text x="815" y="550" text-anchor="end" fill="#4D4F53" font-size="12">(Future Level 3)</text>
+  
+  <!-- Cores -->
+  <g id="cores">
+    <!-- Cores for Node 1 -->
+    <rect x="100" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="140" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 1</text>
+    
+    <rect x="190" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="230" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 2</text>
+    
+    <!-- Cores for Node 2 -->
+    <rect x="280" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="320" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 1</text>
+    
+    <rect x="370" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="410" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 2</text>
+    
+    <!-- Cores for Node 3 -->
+    <rect x="460" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="500" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 1</text>
+    
+    <rect x="550" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="590" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 2</text>
+    
+    <!-- Cores for Node 4 -->
+    <rect x="640" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="680" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 1</text>
+    
+    <rect x="730" y="450" width="80" height="70" rx="5" fill="#DAD7CB"/>
+    <text x="770" y="495" text-anchor="middle" fill="#2E2D29" font-size="14">Core 2</text>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <!-- Login to Compute Nodes -->
+  <line x1="460" y1="150" x2="170" y2="250" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="460" y1="150" x2="350" y2="250" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="460" y1="150" x2="530" y2="250" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="460" y1="150" x2="710" y2="250" stroke="#2E2D29" stroke-width="2"/>
+  
+  <!-- Compute Nodes to Cores -->
+  <line x1="170" y1="330" x2="140" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="170" y1="330" x2="230" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="350" y1="330" x2="320" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="350" y1="330" x2="410" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="530" y1="330" x2="500" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="530" y1="330" x2="590" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="710" y1="330" x2="680" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  <line x1="710" y1="330" x2="770" y2="450" stroke="#2E2D29" stroke-width="2"/>
+  
+  <!-- Legend -->
+  <g transform="translate(100, 600)">
+    <rect x="0" y="0" width="20" height="20" fill="#8C1515"/>
+    <text x="30" y="15" fill="#2E2D29" font-size="14">Login Node (Level 1)</text>
+    
+    <rect x="250" y="0" width="20" height="20" fill="#4D4F53"/>
+    <text x="280" y="15" fill="#2E2D29" font-size="14">Compute Nodes (Level 2)</text>
+    
+    <rect x="500" y="0" width="20" height="20" fill="#DAD7CB"/>
+    <text x="530" y="15" fill="#2E2D29" font-size="14">Cores (Level 3)</text>
+  </g>
+</svg>

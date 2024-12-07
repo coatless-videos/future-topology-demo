@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <!-- Background -->
+  <rect width="600" height="450" fill="#ffffff"/>
+
+  <!-- Cluster boundary - now solid -->
+  <rect x="50" y="20" width="500" height="320" rx="20" fill="#f4f4f4" stroke="#4D4F53" stroke-width="3"/>
+
+  <!-- Cluster Title - made bigger and red -->
+  <text x="70" y="45" font-family="Arial" font-size="18" font-weight="bold" fill="#8C1515">Cluster</text>
+
+  <!-- Storage Archive -->
+  <g transform="translate(260,40)">
+    <rect width="80" height="60" rx="5" fill="#4D4F53"/>
+    <rect x="10" y="10" width="60" height="10" fill="#8C1515"/>
+    <rect x="10" y="25" width="60" height="10" fill="#8C1515"/>
+    <rect x="10" y="40" width="60" height="10" fill="#8C1515"/>
+  </g>
+
+  <!-- Connection lines within cluster - grey -->
+  <path d="M200 180 L300 180 M400 180 L300 180 M300 100 L300 230" stroke="#4D4F53" stroke-width="3" stroke-dasharray="6,4"/>
+
+  <!-- Connection line from user - changed back to red -->
+  <path d="M300 390 L300 290" stroke="#8C1515" stroke-width="3" stroke-dasharray="5,5"/>
+
+  <!-- Compute nodes -->
+  <g transform="translate(150,130)">
+    <rect width="80" height="100" rx="5" fill="#4D4F53"/>
+    <rect x="10" y="10" width="60" height="40" fill="#8C1515"/>
+    <!-- Simpler Gear icon -->
+    <circle cx="40" cy="30" r="12" stroke="white" fill="none" stroke-width="2"/>
+    <circle cx="40" cy="30" r="8" stroke="white" fill="none" stroke-width="2"/>
+    <path d="M40 18 L40 42 M28 30 L52 30 M33 23 L47 37 M33 37 L47 23" stroke="white" stroke-width="2"/>
+    <rect x="20" y="60" width="40" height="5" fill="#ffffff"/>
+    <rect x="20" y="70" width="40" height="5" fill="#ffffff"/>
+    <rect x="20" y="80" width="40" height="5" fill="#ffffff"/>
+    <text x="40" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="#4D4F53">Compute Node</text>
+  </g>
+
+  <g transform="translate(370,130)">
+    <rect width="80" height="100" rx="5" fill="#4D4F53"/>
+    <rect x="10" y="10" width="60" height="40" fill="#8C1515"/>
+    <!-- Simpler Gear icon -->
+    <circle cx="40" cy="30" r="12" stroke="white" fill="none" stroke-width="2"/>
+    <circle cx="40" cy="30" r="8" stroke="white" fill="none" stroke-width="2"/>
+    <path d="M40 18 L40 42 M28 30 L52 30 M33 23 L47 37 M33 37 L47 23" stroke="white" stroke-width="2"/>
+    <rect x="20" y="60" width="40" height="5" fill="#ffffff"/>
+    <rect x="20" y="70" width="40" height="5" fill="#ffffff"/>
+    <rect x="20" y="80" width="40" height="5" fill="#ffffff"/>
+    <text x="40" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="#4D4F53">Compute Node</text>
+  </g>
+
+  <!-- Login node -->
+  <g transform="translate(260,210)">
+    <!-- Base computer shape -->
+    <rect width="80" height="100" rx="5" fill="#4D4F53"/>
+    <!-- Screen area -->
+    <rect x="10" y="10" width="60" height="40" fill="#8C1515"/>
+    <!-- Hello text -->
+    <text x="20" y="35" font-family="Arial" font-size="14" fill="white">Hello</text>
+    <!-- Status lights -->
+    <circle cx="25" cy="70" r="3" fill="#00FF00"/>
+    <circle cx="40" cy="70" r="3" fill="#FFD700"/>
+    <circle cx="55" cy="70" r="3" fill="#FF0000"/>
+    <!-- Network ports -->
+    <rect x="20" y="80" width="40" height="5" fill="#ffffff"/>
+    <rect x="20" y="90" width="40" height="5" fill="#ffffff"/>
+    <text x="85" y="100" font-family="Arial" font-size="14" fill="#4D4F53">Login Node</text>
+  </g>
+
+  <!-- User computer -->
+  <g transform="translate(260,390)">
+    <rect width="80" height="30" rx="5" fill="#4D4F53"/>
+    <rect x="5" y="-20" width="70" height="40" rx="3" fill="#4D4F53"/>
+    <rect x="10" y="-15" width="60" height="30" fill="#8C1515"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="350" y="70" font-family="Arial" font-size="14" fill="#4D4F53">Shared Storage</text>
+  <text x="300" y="440" text-anchor="middle" font-family="Arial" font-size="14" fill="#4D4F53">User Access</text>
+</svg>
